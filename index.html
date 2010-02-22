@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<meta name="author" content="Drew Douglass" />
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+	<title>Easy Opacity jQuery Plugin</title>
+	<script src="http://www.google.com/jsapi"></script>
+	<script type="text/javascript">
+	google.load("jquery", 1);
+	</script>
+	<script type="text/javascript" src="jquery.easyopacity1.0.min.js"></script>
+	<style type="text/css">
+		#demo01 {
+			width:125px;
+			height:125px;
+			background-color:#FF0084;
+		}
+	</style>
+	<script type="text/javascript">
+	$(function(){
+		$('#demo01').easyOpacity({
+			opacity : 0.5,
+			hoverOpacity : 1,
+			pointer : true,
+			duration : 1000
+		});
+		
+		function demoCallback(){
+			alert('Demo Callback.');
+		}
+	});
+	</script>
+</head>
+
+<body>
+	<div id="wrap">
+	
+		<h1>Easy Opacity</h1>
+		
+		<h2>Div element w/out background image.</h2>
+		<div id='demo01'>
+		
+		</div>
+	
+	</div>		
+</body>
+</html>
