@@ -46,12 +46,13 @@ THE SOFTWARE.
 		
 			//If the hoverEffect is desired. 
 			if(settings.hoverEffect === true){
-			
+				
+				//If pointer is desired, set it. 
+				if(settings.pointer === true){ $(this).css('cursor', 'pointer'); }
+				
 				//On hover 
 				$(this).hover(function(){
 					
-					//If pointer is desired, set it. 
-					if(settings.pointer === true){ $(this).css('cursor', 'pointer'); }
 					
 					$(this).stop().animate({
 						opacity : parseFloat(settings.hoverOpacity, 10)

@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+	<title>Easy Opacity jQuery Plugin</title>
+	<script src="http://www.google.com/jsapi"></script>
+	<script type="text/javascript">
+	google.load("jquery", 1);
+	</script>
+	<script type="text/javascript" src="js/jquery.easyopacity1.0.min.js"></script>
+	<style type="text/css">
+		#demo01 {
+			margin:25px auto;
+			width:300px;
+			height:125px;
+			background-color:#FF0084;
+		}
+		#demo02 {
+			margin:25px auto;
+			width:300px;
+			height:125px;
+			background-color:#4096EE;
+		}
+		#demo03 {
+			margin:25px auto;
+			width:300px;
+			height:125px;
+			background-color:#FF7400;
+		}
+		.shadow {
+			-moz-box-shadow:1px 1px 25px #000;
+			-webkit-box-shadow:1px 1px 25px #000;
+			box-shadow:1px 1px 25px #000;
+		}
+	</style>
+	<script type="text/javascript">
+	$(function(){
+		$('#demo01').easyOpacity({
+			opacity : 0.5,
+			hoverOpacity : 1,
+			pointer : true,
+			duration : 1000
+		});
+		$('#demo02').easyOpacity({
+			opacity: 0.2,
+			hoverOpacity: 1,
+			pointer: true,
+			duration: 5000,
+			onMouseOverCallback: demoCallback
+		});
+		$('#demo03').easyOpacity({
+			opacity: 0.5,
+			hoverOpacity: 1,
+			duration: 0,
+			onMouseOverCallback: addShadow,
+			onMouseOutCallback: removeShadow
+		});
+		
+		function demoCallback(){
+			alert('Demo Callback.');
+		}
+		
+		function removeShadow(){
+			$('#demo03').removeClass('shadow');
+		}
+		
+		function addShadow(){
+			$('#demo03').addClass('shadow');
+		}
+	});
+	</script>
+</head>
+
+<body>
+	<div id="wrap">
+	
+		<h1>Easy Opacity</h1>
+		
+		<h2>Div element w/out background image.</h2>
+		<div id='demo01'>
+		&nbsp;
+		</div>
+		
+		<h2>Div element w/callback, long duration, and low opacity.</h2>
+		<div id='demo02'>
+		&nbsp;
+		</div>
+		
+		<h2>Div element w/mouseover and mouseout callbacks</h2>
+		<div id='demo03'>
+		&nbsp;
+		</div>
+		
+	</div>		
+</body>
+</html>
