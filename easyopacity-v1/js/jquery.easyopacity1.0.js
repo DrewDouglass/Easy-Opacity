@@ -52,18 +52,12 @@ THE SOFTWARE.
 				
 				//On hover 
 				$(this).hover(function(){
-					
-					
 					$(this).stop().animate({
 						opacity : parseFloat(settings.hoverOpacity, 10)
 					}, settings.duration, settings.onMouseOverCallback);
 					
 				//On mouseout 
 				}, function(){
-					
-					//If pointer was used, reset it.
-					if(settings.pointer === true){ $(this).css('cursor', null); }
-					
 					$(this).stop().animate({
 						opacity : parseFloat(settings.opacity, 10)
 					}, settings.duration, settings.onMouseOutCallback);
